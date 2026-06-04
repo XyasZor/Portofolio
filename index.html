@@ -4,14 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>PORTFOLIO | Visual Dynasty</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Ma+Shan+Zheng&family=Orbitron:wght@400;700;900&family=Crimson+Pro:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Crimson+Pro:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <canvas id="bgCanvas"></canvas>
 <canvas id="nirvanaCanvas"></canvas>
 
+<!-- SVG ornaments -->
 <svg class="dynasty-ornament orn-tl" viewBox="0 0 220 220"><path d="M0 0 L220 0 L220 22 Q160 22 145 70 Q130 118 100 138 Q70 158 60 200 L0 200 Z" fill="rgba(240,192,64,.09)"/><circle cx="32" cy="32" r="10" stroke="rgba(240,192,64,.55)" stroke-width="1.2" fill="none"/></svg>
 <svg class="dynasty-ornament orn-tr" viewBox="0 0 220 220"><path d="M0 0 L220 0 L220 200 L160 200 Q150 158 120 138 Q90 118 75 70 Q60 22 0 22 Z" fill="rgba(240,192,64,.09)"/><circle cx="188" cy="32" r="10" stroke="rgba(240,192,64,.55)" stroke-width="1.2" fill="none"/></svg>
 <svg class="dynasty-ornament orn-bl" viewBox="0 0 200 200"><path d="M0 200 L200 200 L200 178 Q150 178 140 138 Q130 98 100 78 Q70 58 58 18 L0 18 Z" fill="rgba(0,180,220,.06)"/><circle cx="28" cy="172" r="7" stroke="rgba(0,200,220,.45)" stroke-width="1" fill="none"/></svg>
@@ -28,13 +30,16 @@
     <p class="hero-sub">✦Desain Komunikasi Visual✦</p>
     <p class="hero-tagline">—"Serba Bisa, Bukan Selalu Bisa." —</p>
     <div class="profile-section">
-      <div class="profile-photo-wrap">
+      <div class="profile-photo-wrap" id="profilePhotoWrap">
         <div class="profile-photo-inner">
-          <div class="profile-photo-placeholder" id="photoPlaceholder"><span>👤</span><span>FOTO PROFIL</span></div>
+          <div class="profile-photo-placeholder" id="photoPlaceholder">👤</div>
           <img id="profileImg" src="" style="display:none">
         </div>
       </div>
-      <div class="profile-info"><h3>✦PROFIL DIRI✦</h3><div id="profileContainer"></div></div>
+      <div class="profile-info">
+        <h3>✦PROFIL DIRI✦ <span id="editProfileBtn" style="display:none; cursor:pointer; font-size:0.8rem;">✏️ Edit</span></h3>
+        <div id="profileContainer"></div>
+      </div>
     </div>
   </section>
   <section class="section deck-section" id="skills">
@@ -67,15 +72,16 @@
     <h2 class="section-title">Kontak</h2>
     <div class="section-divider"></div>
     <div class="contact-grid">
-      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn"><span>🐙</span>GitHub</div><div class="contact-popup">github.com/fakih</div></div>
-      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn"><span>💬</span>WhatsApp</div><div class="contact-popup">+62 878-5249-0124</div></div>
-      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn"><span>✉️</span>Email</div><div class="contact-popup">caviar683@gmail.com</div></div>
-      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn"><span>🎵</span>TikTok</div><div class="contact-popup">@Selimut_Panas</div></div>
+      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn">GitHub</div><div class="contact-popup">github.com/fakih</div></div>
+      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn">WhatsApp</div><div class="contact-popup">+62 878-5249-0124</div></div>
+      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn">Email</div><div class="contact-popup">caviar683@gmail.com</div></div>
+      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn">TikTok</div><div class="contact-popup">@Selimut_Panas</div></div>
     </div>
   </section>
   <footer>✦Tanggal dibuat: 6/02/2026✦ &nbsp;|&nbsp; Tahap Pengembangan✦</footer>
 </div>
 <div id="mediaModal" class="modal"><span class="modal-close-btn" onclick="closeModal()">&times;</span><div class="modal-content" id="modalContent"></div></div>
+
 <script src="script.js"></script>
 </body>
 </html>

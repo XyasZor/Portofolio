@@ -497,15 +497,12 @@ nav a:hover::after {
 }
 
 .skill-fan.open {
-  .skill-fan.open {
   display: flex !important;
-  justify-content: flex-start;   /* ← ubah dari center */
+  justify-content: center;
   align-items: center;
   width: 100%;
   margin: 0 auto;
   gap: 16px;
-  padding-left: max(16px, calc((100% - (160px * 5 + 16px * 4)) / 2));  /* ← centering via padding */
-  padding-right: 16px;
 }
 
 /* Animate cards in when fan opens */

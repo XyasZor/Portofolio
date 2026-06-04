@@ -3,27 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>PORTFOLIO | Visual Dynasty</title>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>PORTFOLIO Websites</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Ma+Shan+Zheng&family=Orbitron:wght@400;700;900&family=Crimson+Pro:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- BG + NIRVANA CANVAS -->
 <canvas id="bgCanvas"></canvas>
 <canvas id="nirvanaCanvas"></canvas>
 
-<!-- SVG ornaments -->
-<svg class="dynasty-ornament orn-tl" viewBox="0 0 220 220"><path d="M0 0 L220 0 L220 22 Q160 22 145 70 Q130 118 100 138 Q70 158 60 200 L0 200 Z" fill="rgba(240,192,64,.09)"/><circle cx="32" cy="32" r="10" stroke="rgba(240,192,64,.55)" stroke-width="1.2" fill="none"/></svg>
-<svg class="dynasty-ornament orn-tr" viewBox="0 0 220 220"><path d="M0 0 L220 0 L220 200 L160 200 Q150 158 120 138 Q90 118 75 70 Q60 22 0 22 Z" fill="rgba(240,192,64,.09)"/><circle cx="188" cy="32" r="10" stroke="rgba(240,192,64,.55)" stroke-width="1.2" fill="none"/></svg>
-<svg class="dynasty-ornament orn-bl" viewBox="0 0 200 200"><path d="M0 200 L200 200 L200 178 Q150 178 140 138 Q130 98 100 78 Q70 58 58 18 L0 18 Z" fill="rgba(0,180,220,.06)"/><circle cx="28" cy="172" r="7" stroke="rgba(0,200,220,.45)" stroke-width="1" fill="none"/></svg>
-<svg class="dynasty-ornament orn-br" viewBox="0 0 200 200"><path d="M0 200 L200 200 L200 18 L142 18 Q130 58 100 78 Q70 98 60 138 Q50 178 0 178 Z" fill="rgba(0,180,220,.06)"/><circle cx="172" cy="172" r="7" stroke="rgba(0,200,220,.45)" stroke-width="1" fill="none"/></svg>
-<svg class="dynasty-ornament orn-side-l" viewBox="0 0 80 300"><path d="M72 0 Q78 150 72 300 L52 300 Q42 200 42 150 Q42 100 52 0 Z" fill="rgba(0,200,220,.06)"/><circle cx="62" cy="60" r="6" stroke="rgba(0,200,220,.5)" stroke-width="1.2" fill="none"/></svg>
-<svg class="dynasty-ornament orn-side-r" viewBox="0 0 80 300"><path d="M72 0 Q78 150 72 300 L52 300 Q42 200 42 150 Q42 100 52 0 Z" fill="rgba(0,200,220,.06)"/><circle cx="62" cy="60" r="6" stroke="rgba(0,200,220,.5)" stroke-width="1.2" fill="none"/></svg>
-<svg class="dynasty-ornament orn-mid-l" viewBox="0 0 100 200"><path d="M90 10 Q100 100 90 190 L70 190 Q60 120 60 100 Q60 80 70 10 Z" fill="rgba(176,96,255,.04)"/><circle cx="82" cy="55" r="5" stroke="rgba(176,96,255,.45)" stroke-width="1" fill="none"/></svg>
-<svg class="dynasty-ornament orn-mid-r" viewBox="0 0 100 200"><path d="M90 10 Q100 100 90 190 L70 190 Q60 120 60 100 Q60 80 70 10 Z" fill="rgba(176,96,255,.04)"/><circle cx="82" cy="55" r="5" stroke="rgba(176,96,255,.45)" stroke-width="1" fill="none"/></svg>
+<!-- DYNASTY ORNAMENTS (SVG) -->
+<svg class="dynasty-ornament orn-tl" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 0 L220 0 L220 22 Q160 22 145 70 Q130 118 100 138 Q70 158 60 200 L0 200 Z" fill="rgba(240,192,64,.09)"/>
+  <path d="M12 0 L12 175 Q35 162 58 138 Q88 106 105 74 Q122 42 165 22 L220 12 L220 0 Z" stroke="rgba(240,192,64,.5)" stroke-width="1.2" fill="none"/>
+  <circle cx="32" cy="32" r="10" stroke="rgba(240,192,64,.55)" stroke-width="1.2" fill="none"/>
+  <circle cx="32" cy="32" r="4" fill="rgba(240,192,64,.4)"/>
+  <circle cx="32" cy="32" r="7" stroke="rgba(0,229,255,.3)" stroke-width=".6" fill="none"/>
+  <path d="M0 0 L14 14" stroke="rgba(240,192,64,.4)" stroke-width="1"/>
+  <path d="M22 8 Q32 0 42 8 Q52 18 42 32" stroke="rgba(0,200,220,.5)" stroke-width="1" fill="none"/>
+  <path d="M0 55 Q22 48 28 65 Q34 82 22 88" stroke="rgba(240,192,64,.4)" stroke-width="1" fill="none"/>
+  <path d="M65 0 Q70 24 58 34 Q46 44 52 62" stroke="rgba(240,192,64,.35)" stroke-width="1" fill="none"/>
+  <path d="M95 0 L95 6 Q108 10 113 24 Q118 38 105 44" stroke="rgba(0,200,220,.35)" stroke-width="1" fill="none"/>
+  <path d="M0 100 L6 100 Q10 115 24 120 Q38 128 40 115" stroke="rgba(240,192,64,.35)" stroke-width="1" fill="none"/>
+  <rect x="5" y="5" width="16" height="16" rx="2" stroke="rgba(240,192,64,.28)" stroke-width="1" fill="none"/>
+  <path d="M0 140 Q18 135 22 148 Q26 162 14 166" stroke="rgba(0,229,255,.3)" stroke-width=".8" fill="none"/>
+  <path d="M130 0 Q136 18 128 26 Q120 34 126 48" stroke="rgba(240,192,64,.28)" stroke-width=".8" fill="none"/>
+  <circle cx="75" cy="14" r="3" fill="rgba(0,229,255,.4)"/>
+  <circle cx="14" cy="75" r="3" fill="rgba(0,229,255,.4)"/>
+  <path d="M50 0 L55 5 L50 10 L45 5 Z" fill="rgba(240,192,64,.35)"/>
+  <path d="M0 50 L5 55 L0 60 L-5 55 Z" fill="rgba(240,192,64,.35)"/>
+</svg>
 
+<svg class="dynasty-ornament orn-tr" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 0 L220 0 L220 200 L160 200 Q150 158 120 138 Q90 118 75 70 Q60 22 0 22 Z" fill="rgba(240,192,64,.09)"/>
+  <path d="M208 0 L208 175 Q185 162 162 138 Q132 106 115 74 Q98 42 55 22 L0 12 L0 0 Z" stroke="rgba(240,192,64,.5)" stroke-width="1.2" fill="none"/>
+  <circle cx="188" cy="32" r="10" stroke="rgba(240,192,64,.55)" stroke-width="1.2" fill="none"/>
+  <circle cx="188" cy="32" r="4" fill="rgba(240,192,64,.4)"/>
+  <circle cx="75" cy="14" r="3" fill="rgba(0,229,255,.4)"/>
+  <path d="M170 8 Q180 0 190 8 Q200 18 188 32" stroke="rgba(0,200,220,.5)" stroke-width="1" fill="none"/>
+  <path d="M160 0 Q154 12 162 22 Q170 32 160 44" stroke="rgba(240,192,64,.3)" stroke-width=".8" fill="none"/>
+  <rect x="200" y="5" width="16" height="16" rx="2" stroke="rgba(240,192,64,.28)" stroke-width="1" fill="none"/>
+</svg>
+
+<svg class="dynasty-ornament orn-bl" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 200 L200 200 L200 178 Q150 178 140 138 Q130 98 100 78 Q70 58 58 18 L0 18 Z" fill="rgba(0,180,220,.06)"/>
+  <path d="M10 200 L10 38 Q32 50 55 72 Q82 100 100 132 Q120 164 162 180 L200 192 L200 200 Z" stroke="rgba(0,200,220,.4)" stroke-width="1" fill="none"/>
+  <circle cx="28" cy="172" r="7" stroke="rgba(0,200,220,.45)" stroke-width="1" fill="none"/>
+  <circle cx="28" cy="172" r="3" fill="rgba(0,200,220,.35)"/>
+  <path d="M0 140 Q20 134 24 148 Q28 162 18 168" stroke="rgba(240,192,64,.35)" stroke-width="1" fill="none"/>
+  <path d="M55 200 Q60 185 70 182 Q80 178 78 190" stroke="rgba(0,200,220,.3)" stroke-width=".8" fill="none"/>
+</svg>
+
+<svg class="dynasty-ornament orn-br" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 200 L200 200 L200 18 L142 18 Q130 58 100 78 Q70 98 60 138 Q50 178 0 178 Z" fill="rgba(0,180,220,.06)"/>
+  <path d="M190 200 L190 38 Q168 50 145 72 Q118 100 100 132 Q80 164 38 180 L0 192 L0 200 Z" stroke="rgba(0,200,220,.4)" stroke-width="1" fill="none"/>
+  <circle cx="172" cy="172" r="7" stroke="rgba(0,200,220,.45)" stroke-width="1" fill="none"/>
+  <circle cx="172" cy="172" r="3" fill="rgba(0,200,220,.35)"/>
+</svg>
+
+<svg class="dynasty-ornament orn-side-l" viewBox="0 0 80 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M72 0 Q78 150 72 300 L52 300 Q42 200 42 150 Q42 100 52 0 Z" fill="rgba(0,200,220,.06)"/>
+  <path d="M62 10 Q72 80 66 150 Q60 220 62 290" stroke="rgba(0,200,220,.4)" stroke-width="1.2" fill="none"/>
+  <circle cx="62" cy="60" r="6" stroke="rgba(0,200,220,.5)" stroke-width="1.2" fill="none"/>
+  <circle cx="62" cy="150" r="6" stroke="rgba(240,192,64,.5)" stroke-width="1.2" fill="none"/>
+  <circle cx="62" cy="240" r="6" stroke="rgba(0,200,220,.5)" stroke-width="1.2" fill="none"/>
+  <circle cx="62" cy="60" r="2.5" fill="rgba(0,200,220,.4)"/>
+  <circle cx="62" cy="150" r="2.5" fill="rgba(240,192,64,.4)"/>
+  <circle cx="62" cy="240" r="2.5" fill="rgba(0,200,220,.4)"/>
+  <path d="M42 52 Q52 46 57 58 Q62 70 52 74" stroke="rgba(240,192,64,.4)" stroke-width="1" fill="none"/>
+  <path d="M42 142 Q52 136 57 148 Q62 160 52 164" stroke="rgba(240,192,64,.4)" stroke-width="1" fill="none"/>
+  <path d="M42 232 Q52 226 57 238 Q62 250 52 254" stroke="rgba(240,192,64,.4)" stroke-width="1" fill="none"/>
+  <path d="M30 100 L35 105 L30 110 L25 105 Z" fill="rgba(240,192,64,.4)"/>
+  <path d="M30 196 L35 201 L30 206 L25 201 Z" fill="rgba(0,200,220,.4)"/>
+</svg>
+
+<svg class="dynasty-ornament orn-side-r" viewBox="0 0 80 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M72 0 Q78 150 72 300 L52 300 Q42 200 42 150 Q42 100 52 0 Z" fill="rgba(0,200,220,.06)"/>
+  <path d="M62 10 Q72 80 66 150 Q60 220 62 290" stroke="rgba(0,200,220,.4)" stroke-width="1.2" fill="none"/>
+  <circle cx="62" cy="60" r="6" stroke="rgba(0,200,220,.5)" stroke-width="1.2" fill="none"/>
+  <circle cx="62" cy="150" r="6" stroke="rgba(240,192,64,.5)" stroke-width="1.2" fill="none"/>
+  <circle cx="62" cy="240" r="6" stroke="rgba(0,200,220,.5)" stroke-width="1.2" fill="none"/>
+  <circle cx="62" cy="60" r="2.5" fill="rgba(0,200,220,.4)"/>
+  <circle cx="62" cy="150" r="2.5" fill="rgba(240,192,64,.4)"/>
+  <circle cx="62" cy="240" r="2.5" fill="rgba(0,200,220,.4)"/>
+</svg>
+
+<svg class="dynasty-ornament orn-mid-l" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M90 10 Q100 100 90 190 L70 190 Q60 120 60 100 Q60 80 70 10 Z" fill="rgba(176,96,255,.04)"/>
+  <path d="M80 15 Q92 60 85 100 Q78 140 82 185" stroke="rgba(176,96,255,.35)" stroke-width="1" fill="none"/>
+  <circle cx="82" cy="55" r="5" stroke="rgba(176,96,255,.45)" stroke-width="1" fill="none"/>
+  <circle cx="82" cy="100" r="5" stroke="rgba(240,192,64,.4)" stroke-width="1" fill="none"/>
+  <circle cx="82" cy="145" r="5" stroke="rgba(176,96,255,.45)" stroke-width="1" fill="none"/>
+  <path d="M55 45 Q65 40 70 52 Q75 64 65 68" stroke="rgba(176,96,255,.3)" stroke-width=".8" fill="none"/>
+  <path d="M55 90 Q65 84 70 96 Q75 108 65 112" stroke="rgba(176,96,255,.3)" stroke-width=".8" fill="none"/>
+</svg>
+
+<svg class="dynasty-ornament orn-mid-r" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M90 10 Q100 100 90 190 L70 190 Q60 120 60 100 Q60 80 70 10 Z" fill="rgba(176,96,255,.04)"/>
+  <path d="M80 15 Q92 60 85 100 Q78 140 82 185" stroke="rgba(176,96,255,.35)" stroke-width="1" fill="none"/>
+  <circle cx="82" cy="55" r="5" stroke="rgba(176,96,255,.45)" stroke-width="1" fill="none"/>
+  <circle cx="82" cy="100" r="5" stroke="rgba(240,192,64,.4)" stroke-width="1" fill="none"/>
+  <circle cx="82" cy="145" r="5" stroke="rgba(176,96,255,.45)" stroke-width="1" fill="none"/>
+</svg>
+
+<!-- APP -->
 <div id="app">
   <nav>
     <a href="#hero">Home</a>
@@ -32,43 +116,63 @@
     <a href="#contact">Kontak</a>
   </nav>
 
+  <!-- HERO -->
   <section class="hero" id="hero">
     <h1 class="hero-title">
-      <span class="title-port" id="adminTriggerPort">PORT</span>
+      <span class="title-port">PORT</span>
       <span id="globeContainer"><canvas id="globeCanvas"></canvas></span>
-      <span class="title-folio" id="adminTriggerFolio">FOLIO</span>
+      <span class="title-folio">FOLIO</span>
     </h1>
     <p class="hero-sub">✦Desain Komunikasi Visual✦</p>
     <p class="hero-tagline">—"Serba Bisa, Bukan Selalu Bisa." —</p>
 
+    <!-- PROFILE -->
     <div class="profile-section" id="profile">
-      <div class="profile-photo-wrap" id="profilePhotoWrap">
+      <div class="profile-photo-wrap">
         <div class="profile-photo-inner">
-          <div class="profile-photo-placeholder" id="photoPlaceholder">
+          <!--
+            ════════════════════════════════════════════
+            UBAH FOTO PROFIL — HANYA LEWAT VS CODE
+            Ganti nama file di atribut src di bawah ini.
+            Contoh: src="foto_saya.jpg"
+            Taruh file foto di folder yang sama dengan index.html
+            ════════════════════════════════════════════
+          -->
+          <img id="profileImg" src="profile.jpg" alt="Foto Profil"
+               onerror="this.style.display='none'; document.getElementById('photoPlaceholder').style.display='flex';">
+          <div class="profile-photo-placeholder" id="photoPlaceholder" style="display:none">
             <span style="font-size:clamp(28px,5vw,44px)">👤</span>
-            <span>TAP TO UPLOAD</span>
+            <span>FOTO TIDAK DITEMUKAN</span>
           </div>
-          <img id="profileImg" src="" alt="Foto Profil" style="display:none">
         </div>
       </div>
 
-      <div class="profile-info" id="profileInfo">
-        <h3>✦PROFIL DIRI✦ <span id="editProfileBtn" style="display:none; cursor:pointer; font-size:0.8rem; margin-left:10px;">✏️ Edit</span></h3>
-        <div class="info-row"><span class="info-label">Nama</span><span class="info-value" id="profileName">Fakih Aditya Rahman</span></div>
-        <div class="info-row"><span class="info-label">Umur</span><span class="info-value" id="profileAge">15 Tahun</span></div>
-        <div class="info-row"><span class="info-label">Tempat</span><span class="info-value" id="profilePlace">Limus Pratama Regency</span></div>
-        <div class="info-row"><span class="info-label">Marga</span><span class="info-value" id="profileFamily">Adzmatkhan</span></div>
-        <div class="info-row"><span class="info-label">Gelar</span><span class="info-value" id="profileTitle">Raden & Dzurriyat</span></div>
-        <div class="info-row"><span class="info-label">Gender</span><span class="info-value" id="profileGender">Laki-laki</span></div>
-        <div class="info-row"><span class="info-label">Sekolah</span><span class="info-value" id="profileSchool">SMK & MTS AL MUHTADIN</span></div>
+      <div class="profile-info">
+        <!--
+          ════════════════════════════════════════
+          UBAH DATA PROFIL — HANYA LEWAT VS CODE
+          Edit teks di dalam tag <span class="info-value">
+          ════════════════════════════════════════
+        -->
+        <h3>✦PROFIL DIRI✦</h3>
+        <div class="info-row"><span class="info-label">Nama</span><span class="info-value">Fakih Aditya Rahman</span></div>
+        <div class="info-row"><span class="info-label">Umur</span><span class="info-value">15 Tahun</span></div>
+        <div class="info-row"><span class="info-label">Tempat</span><span class="info-value">Limus Pratama Regency</span></div>
+        <div class="info-row"><span class="info-label">Marga</span><span class="info-value">Adzmatkhan</span></div>
+        <div class="info-row"><span class="info-label">Gelar</span><span class="info-value">Raden & Dzurriyat</span></div>
+        <div class="info-row"><span class="info-label">Gender</span><span class="info-value">Laki-laki</span></div>
+        <div class="info-row"><span class="info-label">Sekolah</span><span class="info-value">SMK & MTS AL MUHTADIN</span></div>
       </div>
     </div>
   </section>
 
+  <!-- SKILLS -->
   <section class="section deck-section" id="skills">
     <h2 class="section-title">Bidang Keahlian</h2>
     <div class="section-divider"></div>
     <div class="deck-wrapper">
+
+      <!-- Tumpukan kartu -->
       <div class="card-stack" id="cardStack" onclick="toggleFan()">
         <div class="stack-card"><div class="card-pattern"></div><div class="card-center">✦</div></div>
         <div class="stack-card"><div class="card-pattern"></div><div class="card-center">◈</div></div>
@@ -78,41 +182,192 @@
       </div>
       <p class="stack-hint" id="stackHint">✦ KLIK UNTUK BUKA KARTU ✦</p>
 
+      <!-- Fan kartu skill -->
       <div class="skill-fan" id="skillFan">
-        <div class="skill-card" data-skill-index="0"><div class="card-pattern"></div><div class="card-suit">♠</div><div class="card-icon">🎨</div><div class="card-name">Gambar</div><div class="card-suit-br">♠</div></div>
-        <div class="skill-card" data-skill-index="1"><div class="card-pattern"></div><div class="card-suit">♥</div><div class="card-icon">✏️</div><div class="card-name">Menulis</div><div class="card-suit-br">♥</div></div>
-        <div class="skill-card" data-skill-index="2"><div class="card-pattern"></div><div class="card-suit">♦</div><div class="card-icon">🤖</div><div class="card-name">Cyber</div><div class="card-suit-br">♦</div></div>
-        <div class="skill-card" data-skill-index="3"><div class="card-pattern"></div><div class="card-suit">♣</div><div class="card-icon">📸</div><div class="card-name">Photography</div><div class="card-suit-br">♣</div></div>
-        <div class="skill-card" data-skill-index="4"><div class="card-pattern"></div><div class="card-suit">★</div><div class="card-icon">📖</div><div class="card-name">Edukasi</div><div class="card-suit-br">★</div></div>
+        <div class="skill-card" onclick="openSkill(0,this)"><div class="card-pattern"></div><div class="card-suit">♠</div><div class="card-icon">🎨</div><div class="card-name">Gambar</div><div class="card-suit-br">♠</div></div>
+        <div class="skill-card" onclick="openSkill(1,this)"><div class="card-pattern"></div><div class="card-suit">♥</div><div class="card-icon">✏️</div><div class="card-name">Menulis</div><div class="card-suit-br">♥</div></div>
+        <div class="skill-card" onclick="openSkill(2,this)"><div class="card-pattern"></div><div class="card-suit">♦</div><div class="card-icon">🤖</div><div class="card-name">Cyber</div><div class="card-suit-br">♦</div></div>
+        <div class="skill-card" onclick="openSkill(3,this)"><div class="card-pattern"></div><div class="card-suit">♣</div><div class="card-icon">📸</div><div class="card-name">Photography</div><div class="card-suit-br">♣</div></div>
+        <div class="skill-card" onclick="openSkill(4,this)"><div class="card-pattern"></div><div class="card-suit">★</div><div class="card-icon">📖</div><div class="card-name">Edukasi</div><div class="card-suit-br">★</div></div>
       </div>
 
-      <div class="skill-content" id="skill-0"><div class="skill-content-inner"><h4>🎨 Gambar</h4><div class="media-grid" id="mediaGrid0"></div></div></div>
-      <div class="skill-content" id="skill-1"><div class="skill-content-inner"><h4>✏️ Menulis</h4><div class="media-grid" id="mediaGrid1"></div></div></div>
-      <div class="skill-content" id="skill-2"><div class="skill-content-inner"><h4>🤖 Cyber</h4><div class="media-grid" id="mediaGrid2"></div></div></div>
-      <div class="skill-content" id="skill-3"><div class="skill-content-inner"><h4>📸 Photography</h4><div class="media-grid" id="mediaGrid3"></div></div></div>
-      <div class="skill-content" id="skill-4"><div class="skill-content-inner"><h4>📖 Edukasi</h4><div class="media-grid" id="mediaGrid4"></div></div></div>
+      <!-- Panel Media -->
+
+      <!-- SKILL 0: GAMBAR -->
+      <div class="skill-content" id="skill-0">
+        <div class="skill-content-inner">
+          <h4>🎨 Gambar</h4>
+          <div class="media-grid">
+            <!--
+              ════════════════════════════════════════
+              UBAH GAMBAR & CATATAN — HANYA LEWAT VS CODE
+              Ganti src="..." dengan nama file gambar kamu
+              Ganti teks di dalam <div class="media-card-note">
+              ════════════════════════════════════════
+            -->
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="GD_1.jpg" alt="Karya 1"></div>
+              <div class="media-card-note">Deskripsi karya Gambar pertama.</div>
+            </div>
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="GD_2.jpg" alt="Karya 2"></div>
+              <div class="media-card-note">Deskripsi Gambar kedua.</div>
+            </div>
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="GD_3.jpg" alt="Karya 3"></div>
+              <div class="media-card-note">Deskripsi Gambar ketiga.</div>
+            </div>
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="GD_4.jpg" alt="Karya 4"></div>
+              <div class="media-card-note">Deskripsi Gambar keempat.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILL 1: MENULIS -->
+      <div class="skill-content" id="skill-1">
+        <div class="skill-content-inner">
+          <h4>✏️ Menulis</h4>
+          <div class="media-grid">
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="ILL_1.jpg" alt="Ilustrasi 1"></div>
+              <div class="media-card-note">Ilustrasi pertama.</div>
+            </div>
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="ILL_2.jpg" alt="Ilustrasi 2"></div>
+              <div class="media-card-note">Ilustrasi kedua.</div>
+            </div>
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="ILL_3.jpg" alt="Ilustrasi 3"></div>
+              <div class="media-card-note">Ilustrasi ketiga.</div>
+            </div>
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="ILL_4.jpg" alt="Ilustrasi 4"></div>
+              <div class="media-card-note">Ilustrasi keempat.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILL 2: CYBER -->
+      <div class="skill-content" id="skill-2">
+        <div class="skill-content-inner">
+          <h4>🤖 Cyber</h4>
+          <div class="media-grid">
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="UI_1.jpg" alt="UI 1"></div>
+              <div class="media-card-note">Desain UI pertama.</div>
+            </div>
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="UI_2.jpg" alt="UI 2"></div>
+              <div class="media-card-note">Prototype UX.</div>
+            </div>
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="UI_3.jpg" alt="UI 3"></div>
+              <div class="media-card-note">Wireframe / mockup.</div>
+            </div>
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="UI_4.jpg" alt="UI 4"></div>
+              <div class="media-card-note">Desain UI keempat.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILL 3: PHOTOGRAPHY -->
+      <div class="skill-content" id="skill-3">
+        <div class="skill-content-inner">
+          <h4>📸 Photography</h4>
+          <div class="media-grid">
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="PH_1.jpg" alt="Foto 1"></div>
+              <div class="media-card-note">Foto pertama.</div>
+            </div>
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="PH_2.jpg" alt="Foto 2"></div>
+              <div class="media-card-note">Foto kedua.</div>
+            </div>
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="PH_3.jpg" alt="Foto 3"></div>
+              <div class="media-card-note">Foto ketiga.</div>
+            </div>
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="PH_4.jpg" alt="Foto 4"></div>
+              <div class="media-card-note">Foto keempat.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILL 4: EDUKASI -->
+      <div class="skill-content" id="skill-4">
+        <div class="skill-content-inner">
+          <h4>📖 Edukasi</h4>
+          <div class="media-grid">
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="BR_1.jpg" alt="Edukasi 1"></div>
+              <div class="media-card-note">Logo / identitas brand.</div>
+            </div>
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="BR_2.jpg" alt="Edukasi 2"></div>
+              <div class="media-card-note">Mockup branding.</div>
+            </div>
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="BR_3.jpg" alt="Edukasi 3"></div>
+              <div class="media-card-note">Stationery / brand guide.</div>
+            </div>
+            <div class="media-card" onclick="openModal(this)">
+              <div class="media-card-bg"><img src="BR_4.jpg" alt="Edukasi 4"></div>
+              <div class="media-card-note">Presentasi edukasi.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section class="section" id="contact">
     <h2 class="section-title">Kontak</h2>
     <div class="section-divider"></div>
+    <!--
+      ════════════════════════════════════════
+      UBAH KONTAK — HANYA LEWAT VS CODE
+      Edit teks di dalam <div class="contact-popup">
+      ════════════════════════════════════════
+    -->
     <div class="contact-grid">
-      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn"><span class="c-icon">🐙</span>GitHub</div><div class="contact-popup">github.com/fakih</div></div>
-      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn"><span class="c-icon">💬</span>WhatsApp</div><div class="contact-popup">+62 878-5249-0124</div></div>
-      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn"><span class="c-icon">✉️</span>Email</div><div class="contact-popup">caviar683@gmail.com</div></div>
-      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn"><span class="c-icon">🎵</span>TikTok</div><div class="contact-popup">@Selimut_Panas</div></div>
+      <div class="contact-item" onclick="toggleContact(this)">
+        <div class="contact-btn"><span class="c-icon">🐙</span>GitHub</div>
+        <div class="contact-popup">github.com/username</div>
+      </div>
+      <div class="contact-item" onclick="toggleContact(this)">
+        <div class="contact-btn"><span class="c-icon">💬</span>WhatsApp</div>
+        <div class="contact-popup">+62 878-5249-0124</div>
+      </div>
+      <div class="contact-item" onclick="toggleContact(this)">
+        <div class="contact-btn"><span class="c-icon">✉️</span>Email</div>
+        <div class="contact-popup">email@gmail.com</div>
+      </div>
+      <div class="contact-item" onclick="toggleContact(this)">
+        <div class="contact-btn"><span class="c-icon">🎵</span>TikTok</div>
+        <div class="contact-popup">@Selimut_Panas</div>
+      </div>
     </div>
   </section>
 
+  <div class="glow-div" style="margin-bottom:0"></div>
   <footer>✦Tanggal dibuat: 6/02/2026✦ &nbsp;|&nbsp; Tahap Pengembangan✦</footer>
 </div>
 
+<!-- MODAL -->
 <div id="mediaModal" class="modal">
-  <span class="modal-close-btn" onclick="closeModal()">&times;</span>
+  <span class="modal-close" onclick="closeModal()">&times;</span>
   <div class="modal-content" id="modalContent"></div>
 </div>
 
-<script src="script.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

@@ -504,6 +504,10 @@ function openSkill(index, element) {
       prev.addEventListener('animationend', () => {
         prev.classList.remove('active', 'closing');
       }, { once: true });
+       // Setelah fan.classList.add('open')
+setTimeout(() => {
+  fan.scrollLeft = 0; // Paksa scroll ke kiri
+}, 100);
     } else {
       return; // Klik kartu yang sama, tidak perlu buka ulang
     }

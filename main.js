@@ -81,61 +81,72 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==================== DATA MEDIA CARD (default & penyimpanan permanen) ====================
+// ⚠️ PENTING: Naikkan versi ini setiap kali kamu update gambar/path di defaultMediaData
+// Ini akan otomatis reset localStorage semua pengunjung agar gambar terbaru muncul
+const DATA_VERSION = "1.3";
+
 const defaultMediaData = {
-  0: [ // Gambar
+  0: [ // Gambar → format GD
     { src: "GD_1.jpg", note: "Sketsa digital ekspresif", type: "image" },
     { src: "GD_2.jpg", note: "Komposisi warna", type: "image" },
-    { src: "videos/GD_VID.mp4", note: "Proses kreatif (video)", type: "video" },
     { src: "GD_3.jpg", note: "Ilustrasi konseptual", type: "image" },
     { src: "GD_4.jpg", note: "Eksplorasi bentuk", type: "image" },
-    { src: "GD_5.jpg", note: "Lukisan digital lanjutan", type: "image" }
+    { src: "GD_5.jpg", note: "Lukisan digital lanjutan", type: "image" },
+    { src: "videos/GD_VID.mp4", note: "Proses kreatif (video)", type: "video" }
   ],
-  1: [ // Menulis
+  1: [ // Menulis → format ILL
     { src: "ILL_1.jpg", note: "Puisi visual", type: "image" },
     { src: "ILL_2.jpg", note: "Sketsa naratif", type: "image" },
-    { src: "videos/ILL_VID.mp4", note: "Behind the words (video)", type: "video" },
     { src: "ILL_3.jpg", note: "Tipografi eksperimental", type: "image" },
     { src: "ILL_4.jpg", note: "Cerita pendek bergambar", type: "image" },
-    { src: "ILL_5.jpg", note: "Komik strip", type: "image" }
+    { src: "ILL_5.jpg", note: "Komik strip", type: "image" },
+    { src: "videos/ILL_VID.mp4", note: "Behind the words (video)", type: "video" }
   ],
-  2: [ // Cyber
-    { src: "UI_1.jpg", note: "Desain antarmuka", type: "image" },
-    { src: "UI_2.jpg", note: "User flow", type: "image" },
-    { src: "videos/UI_VID.mp4", note: "Demo interaksi (video)", type: "video" },
-    { src: "UI_3.jpg", note: "Arsitektur informasi", type: "image" },
-    { src: "UI_4.jpg", note: "Animasi UI", type: "image" },
-    { src: "UI_5.jpg", note: "Sistem desain", type: "image" }
+  2: [ // Cyber → format BR
+    { src: "BR_1.jpg", note: "Eksplorasi digital", type: "image" },
+    { src: "BR_2.jpg", note: "Konsep sistem", type: "image" },
+    { src: "BR_3.jpg", note: "Arsitektur informasi", type: "image" },
+    { src: "BR_4.jpg", note: "Antarmuka pengguna", type: "image" },
+    { src: "BR_5.jpg", note: "Sistem desain", type: "image" },
+    { src: "videos/BR_VID.mp4", note: "Demo interaksi (video)", type: "video" }
   ],
-  3: [ // Photography
+  3: [ // Photography → format PH
     { src: "PH_1.jpg", note: "Komposisi cahaya", type: "image" },
     { src: "PH_2.jpg", note: "Potret dinamis", type: "image" },
-    { src: "videos/PH_VID.mp4", note: "BTS shooting (video)", type: "video" },
     { src: "PH_3.jpg", note: "Ekspresi visual", type: "image" },
     { src: "PH_4.jpg", note: "Arsitektur modern", type: "image" },
-    { src: "PH_5.jpg", note: "Street photography", type: "image" }
+    { src: "PH_5.jpg", note: "Street photography", type: "image" },
+    { src: "videos/PH_VID.mp4", note: "BTS shooting (video)", type: "video" }
   ],
-  4: [ // Edukasi
-    { src: "BR_1.jpg", note: "Identitas merek", type: "image" },
-    { src: "BR_2.jpg", note: "Kemasan & mockup", type: "image" },
-    { src: "videos/BR_VID.mp4", note: "Presentasi brand (video)", type: "video" },
-    { src: "BR_3.jpg", note: "Panduan visual", type: "image" },
-    { src: "BR_4.jpg", note: "Poster edukasi", type: "image" },
-    { src: "BR_5.jpg", note: "Infografis interaktif", type: "image" }
+  4: [ // Edukasi → format ED
+    { src: "ED_1.jpg", note: "Visual edukatif", type: "image" },
+    { src: "ED_2.jpg", note: "Panduan ilustratif", type: "image" },
+    { src: "ED_3.jpg", note: "Infografis", type: "image" },
+    { src: "ED_4.jpg", note: "Poster edukasi", type: "image" },
+    { src: "ED_5.jpg", note: "Materi interaktif", type: "image" },
+    { src: "videos/ED_VID.mp4", note: "Presentasi edukasi (video)", type: "video" }
   ]
 };
 
 function loadMediaData() {
+  const savedVersion = localStorage.getItem('media_data_version');
   const saved = localStorage.getItem('media_cards_data');
-  if (saved) {
+
+  // Jika versi cocok DAN ada data tersimpan → pakai localStorage
+  if (saved && savedVersion === DATA_VERSION) {
     return JSON.parse(saved);
-  } else {
-    localStorage.setItem('media_cards_data', JSON.stringify(defaultMediaData));
-    return JSON.parse(JSON.stringify(defaultMediaData));
   }
+
+  // Versi beda atau belum ada → reset ke defaultMediaData
+  // Ini memastikan update path gambar di kode langsung berlaku
+  localStorage.setItem('media_cards_data', JSON.stringify(defaultMediaData));
+  localStorage.setItem('media_data_version', DATA_VERSION);
+  return JSON.parse(JSON.stringify(defaultMediaData));
 }
 
 function saveMediaData(data) {
   localStorage.setItem('media_cards_data', JSON.stringify(data));
+  localStorage.setItem('media_data_version', DATA_VERSION);
 }
 
 function renderAllMedia() {
@@ -583,6 +594,7 @@ function initContactToggle() {
 
 // ==================== INISIALISASI SEMUA ====================
 function initAll() {
+  checkAdminStatus(); // ← Restore status admin dari localStorage saat load
   loadProfileData();
   renderAllMedia();
   initBackgroundCanvas();

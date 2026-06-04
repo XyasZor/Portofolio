@@ -373,6 +373,7 @@ nav a:hover::after {
 }
 .deck-wrapper {
   position: relative;
+  overflow-x: visible;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -455,11 +456,17 @@ nav a:hover::after {
 
 /* ═══ SKILL FAN ═══ */
 .skill-fan {
-  display: none;
+ display: none;
   width: 100%;
   overflow-x: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--gold) transparent;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
 }
 .skill-fan::-webkit-scrollbar { height: 4px; }
 .skill-fan::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
@@ -488,7 +495,7 @@ nav a:hover::after {
 }
 
 .skill-fan.open {
-  display: flex;
+  display: flex !important;
   justify-content: center;
   align-items: center;
   width: 100%;

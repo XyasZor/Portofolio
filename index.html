@@ -2,12 +2,8 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>PORTFOLIO | Visual Dynasty</title>
-<!-- Security: disable caching & referrer -->
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta name="referrer" content="strict-origin-when-cross-origin">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Ma+Shan+Zheng&family=Orbitron:wght@400;700;900&family=Crimson+Pro:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -16,7 +12,6 @@
 <canvas id="bgCanvas"></canvas>
 <canvas id="nirvanaCanvas"></canvas>
 
-<!-- SVG ornamen (sama) -->
 <svg class="dynasty-ornament orn-tl" viewBox="0 0 220 220"><path d="M0 0 L220 0 L220 22 Q160 22 145 70 Q130 118 100 138 Q70 158 60 200 L0 200 Z" fill="rgba(240,192,64,.09)"/><circle cx="32" cy="32" r="10" stroke="rgba(240,192,64,.55)" stroke-width="1.2" fill="none"/></svg>
 <svg class="dynasty-ornament orn-tr" viewBox="0 0 220 220"><path d="M0 0 L220 0 L220 200 L160 200 Q150 158 120 138 Q90 118 75 70 Q60 22 0 22 Z" fill="rgba(240,192,64,.09)"/><circle cx="188" cy="32" r="10" stroke="rgba(240,192,64,.55)" stroke-width="1.2" fill="none"/></svg>
 <svg class="dynasty-ornament orn-bl" viewBox="0 0 200 200"><path d="M0 200 L200 200 L200 178 Q150 178 140 138 Q130 98 100 78 Q70 58 58 18 L0 18 Z" fill="rgba(0,180,220,.06)"/><circle cx="28" cy="172" r="7" stroke="rgba(0,200,220,.45)" stroke-width="1" fill="none"/></svg>
@@ -27,47 +22,21 @@
 <svg class="dynasty-ornament orn-mid-r" viewBox="0 0 100 200"><path d="M90 10 Q100 100 90 190 L70 190 Q60 120 60 100 Q60 80 70 10 Z" fill="rgba(176,96,255,.04)"/><circle cx="82" cy="55" r="5" stroke="rgba(176,96,255,.45)" stroke-width="1" fill="none"/></svg>
 
 <div id="app">
-  <nav>
-    <a href="#hero">Home</a>
-    <a href="#profile">Profil</a>
-    <a href="#skills">Keahlian</a>
-    <a href="#contact">Kontak</a>
-  </nav>
-
+  <nav><a href="#hero">Home</a><a href="#profile">Profil</a><a href="#skills">Keahlian</a><a href="#contact">Kontak</a></nav>
   <section class="hero" id="hero">
-    <h1 class="hero-title">
-      <span class="title-port" id="adminTriggerPort">PORT</span>
-      <span id="globeContainer"><canvas id="globeCanvas"></canvas></span>
-      <span class="title-folio" id="adminTriggerFolio">FOLIO</span>
-    </h1>
+    <h1 class="hero-title"><span class="title-port">PORT</span><span id="globeContainer"><canvas id="globeCanvas"></canvas></span><span class="title-folio">FOLIO</span></h1>
     <p class="hero-sub">✦Desain Komunikasi Visual✦</p>
     <p class="hero-tagline">—"Serba Bisa, Bukan Selalu Bisa." —</p>
-
-    <div class="profile-section" id="profile">
-      <div class="profile-photo-wrap" id="profilePhotoWrap">
+    <div class="profile-section">
+      <div class="profile-photo-wrap">
         <div class="profile-photo-inner">
-          <div class="profile-photo-placeholder" id="photoPlaceholder">
-            <span style="font-size:clamp(28px,5vw,44px)">👤</span>
-            <span>TAP TO UPLOAD</span>
-          </div>
-          <img id="profileImg" src="" alt="Foto Profil" style="display:none">
+          <div class="profile-photo-placeholder" id="photoPlaceholder"><span>👤</span><span>FOTO PROFIL</span></div>
+          <img id="profileImg" src="" style="display:none">
         </div>
       </div>
-      <input type="file" id="photoInput" accept="image/*" style="display:none">
-
-      <div class="profile-info" id="profileInfo">
-        <h3>✦PROFIL DIRI✦ <span id="editProfileBtn" style="display:none; cursor:pointer; font-size:0.8rem; margin-left:10px;">✏️ Edit</span></h3>
-        <div class="info-row"><span class="info-label">Nama</span><span class="info-value" id="profileName">Fakih Aditya Rahman</span></div>
-        <div class="info-row"><span class="info-label">Umur</span><span class="info-value" id="profileAge">15 Tahun</span></div>
-        <div class="info-row"><span class="info-label">Tempat</span><span class="info-value" id="profilePlace">Limus Pratama Regency</span></div>
-        <div class="info-row"><span class="info-label">Marga</span><span class="info-value" id="profileFamily">Adzmatkhan</span></div>
-        <div class="info-row"><span class="info-label">Gelar</span><span class="info-value" id="profileTitle">Raden & Dzurriyat</span></div>
-        <div class="info-row"><span class="info-label">Gender</span><span class="info-value" id="profileGender">Laki-laki</span></div>
-        <div class="info-row"><span class="info-label">Sekolah</span><span class="info-value" id="profileSchool">SMK & MTS AL MUHTADIN</span></div>
-      </div>
+      <div class="profile-info"><h3>✦PROFIL DIRI✦</h3><div id="profileContainer"></div></div>
     </div>
   </section>
-
   <section class="section deck-section" id="skills">
     <h2 class="section-title">Bidang Keahlian</h2>
     <div class="section-divider"></div>
@@ -80,7 +49,6 @@
         <div class="stack-card"><div class="card-pattern"></div><div class="card-center">♦️</div></div>
       </div>
       <p class="stack-hint" id="stackHint">✦ KLIK UNTUK BUKA KARTU ✦</p>
-
       <div class="skill-fan" id="skillFan">
         <div class="skill-card" data-skill-index="0"><div class="card-pattern"></div><div class="card-suit">♠</div><div class="card-icon">🎨</div><div class="card-name">Gambar</div><div class="card-suit-br">♠</div></div>
         <div class="skill-card" data-skill-index="1"><div class="card-pattern"></div><div class="card-suit">♥</div><div class="card-icon">✏️</div><div class="card-name">Menulis</div><div class="card-suit-br">♥</div></div>
@@ -88,8 +56,6 @@
         <div class="skill-card" data-skill-index="3"><div class="card-pattern"></div><div class="card-suit">♣</div><div class="card-icon">📸</div><div class="card-name">Photography</div><div class="card-suit-br">♣</div></div>
         <div class="skill-card" data-skill-index="4"><div class="card-pattern"></div><div class="card-suit">★</div><div class="card-icon">📖</div><div class="card-name">Edukasi</div><div class="card-suit-br">★</div></div>
       </div>
-
-      <!-- Kontainer media grid per skill (akan diisi JS) -->
       <div class="skill-content" id="skill-0"><div class="skill-content-inner"><h4>🎨 Gambar</h4><div class="media-grid" id="mediaGrid0"></div></div></div>
       <div class="skill-content" id="skill-1"><div class="skill-content-inner"><h4>✏️ Menulis</h4><div class="media-grid" id="mediaGrid1"></div></div></div>
       <div class="skill-content" id="skill-2"><div class="skill-content-inner"><h4>🤖 Cyber</h4><div class="media-grid" id="mediaGrid2"></div></div></div>
@@ -97,26 +63,19 @@
       <div class="skill-content" id="skill-4"><div class="skill-content-inner"><h4>📖 Edukasi</h4><div class="media-grid" id="mediaGrid4"></div></div></div>
     </div>
   </section>
-
   <section class="section" id="contact">
     <h2 class="section-title">Kontak</h2>
     <div class="section-divider"></div>
     <div class="contact-grid">
-      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn"><span class="c-icon">🐙</span>GitHub</div><div class="contact-popup">github.com/radenfakih</div></div>
-      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn"><span class="c-icon">💬</span>WhatsApp</div><div class="contact-popup">+62 878-5249-0124</div></div>
-      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn"><span class="c-icon">✉️</span>Email</div><div class="contact-popup">fakih.aditya@artiva.id</div></div>
-      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn"><span class="c-icon">🎵</span>TikTok</div><div class="contact-popup">@Selimut_Panas</div></div>
+      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn"><span>🐙</span>GitHub</div><div class="contact-popup">github.com/fakih</div></div>
+      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn"><span>💬</span>WhatsApp</div><div class="contact-popup">+62 878-5249-0124</div></div>
+      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn"><span>✉️</span>Email</div><div class="contact-popup">caviar683@gmail.com</div></div>
+      <div class="contact-item" onclick="toggleContact(this)"><div class="contact-btn"><span>🎵</span>TikTok</div><div class="contact-popup">@Selimut_Panas</div></div>
     </div>
   </section>
-
   <footer>✦Tanggal dibuat: 6/02/2026✦ &nbsp;|&nbsp; Tahap Pengembangan✦</footer>
 </div>
-
-<div id="mediaModal" class="modal">
-  <span class="modal-close-btn" onclick="closeModal()">&times;</span>
-  <div class="modal-content" id="modalContent"></div>
-</div>
-
-<script src="main.js"></script>
+<div id="mediaModal" class="modal"><span class="modal-close-btn" onclick="closeModal()">&times;</span><div class="modal-content" id="modalContent"></div></div>
+<script src="script.js"></script>
 </body>
 </html>
